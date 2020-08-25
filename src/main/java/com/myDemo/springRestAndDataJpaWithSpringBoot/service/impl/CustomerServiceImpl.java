@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.myDemo.springRestAndDataJpaWithSpringBoot.entity.Book;
 import com.myDemo.springRestAndDataJpaWithSpringBoot.entity.Customer;
 import com.myDemo.springRestAndDataJpaWithSpringBoot.repository.CustomerRepository;
 import com.myDemo.springRestAndDataJpaWithSpringBoot.service.CustomerService;
@@ -32,6 +33,13 @@ public class CustomerServiceImpl implements CustomerService {
 	public void save(List<Customer> asList) {
 		// TODO Auto-generated method stub
 		customerRepository.saveAll(asList);
+	}
+
+	@Override
+	public List<Customer> retrieveCustomers() {
+		// TODO Auto-generated method stub
+		List<Customer> customer = customerRepository.findAll();
+		return customer;
 	}
 
 }

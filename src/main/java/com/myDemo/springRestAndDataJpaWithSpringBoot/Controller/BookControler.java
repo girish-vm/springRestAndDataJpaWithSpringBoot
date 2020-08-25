@@ -43,7 +43,7 @@ public class BookControler {
 	 }
 	 
 	 @PostMapping("/api/books")
-	 public void saveBook(Book book){
+	 public void saveBook(@RequestBody Book book){
 		 bookService.saveBook(book);
 	  System.out.println("book Saved Successfully");
 	 }
