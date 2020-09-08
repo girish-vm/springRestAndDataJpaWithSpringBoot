@@ -3,6 +3,7 @@
  */
 package com.myDemo.springRestAndDataJpaWithSpringBoot.service.impl;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,6 +37,16 @@ public class BookServiceImpl implements BookService {
 		  return books;
 	}
 
+	public List<Book>getBooksFromHere()
+	{
+		List<Book>books=new LinkedList<Book>();
+		books.add(new Book(101L,"one night stand"));
+		books.add(new Book(102L,"half girlfriend"));
+		books.add(new Book(103L,"osho"));
+		books.add(new Book(104L,"the madness"));
+		return books;
+	}
+	
 	@Override
 	public Book getBook(Long bookId) {
 		// TODO Auto-generated method stub

@@ -40,6 +40,17 @@ public class Book {
 	public void setbName(String bName) {
 		this.bName = bName;
 	}
+
+	public Book(Long id, String bName) {
+		super();
+		this.id = id;
+		this.bName = bName;
+	}
+
+	@Override
+	public String toString() {
+		return "Book [id=" + id + ", bName=" + bName + "]";
+	}
 	 
 	 
 	 

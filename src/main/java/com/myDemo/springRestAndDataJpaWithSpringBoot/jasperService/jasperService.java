@@ -5,6 +5,7 @@ package com.myDemo.springRestAndDataJpaWithSpringBoot.jasperService;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,9 +39,20 @@ public class jasperService {
 	@Autowired
 	JaseperConstants jaseperConstants;
 	
+	public static List<Customer>returnMe(){
+		
+		List<Customer>cust=new ArrayList<>();
+		cust.add(new Customer(10L,"girish","m"));
+		cust.add(new Customer(11L,"lokesh","k"));
+		cust.add(new Customer(12L,"suresh","g"));
+		
+		
+		return cust;
+		
+	}
 	public String exportReport(String reportFormat) throws FileNotFoundException, JRException
 	{
-		List<Customer>customer=customerRepository.findAll();
+		List<Customer>customer=returnMe();
 		
 		File file=ResourceUtils.getFile("classpath:customer.jrxml");
 		JasperReport jasperReport=JasperCompileManager.compileReport(file.getAbsolutePath());

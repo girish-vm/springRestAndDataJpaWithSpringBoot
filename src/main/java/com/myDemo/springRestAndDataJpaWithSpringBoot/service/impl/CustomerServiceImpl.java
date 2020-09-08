@@ -3,12 +3,12 @@
  */
 package com.myDemo.springRestAndDataJpaWithSpringBoot.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.myDemo.springRestAndDataJpaWithSpringBoot.entity.Book;
 import com.myDemo.springRestAndDataJpaWithSpringBoot.entity.Customer;
 import com.myDemo.springRestAndDataJpaWithSpringBoot.repository.CustomerRepository;
 import com.myDemo.springRestAndDataJpaWithSpringBoot.service.CustomerService;
@@ -22,6 +22,9 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Autowired
 	CustomerRepository customerRepository;
+	
+	
+	
 	
 	@Override
 	public void CustomerSave(Customer customer) {
